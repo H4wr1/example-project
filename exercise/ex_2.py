@@ -18,7 +18,7 @@ b = 5
 obwod_prostokat = (a*2)+(b*2)
 pole_prostokat = a*b
 
-print("Obwód prostokątu wynosi " + str(obwod_prostokat) + ", a pole " + str(pole_prostokat) + ".")
+print("Obwód prostokąta wynosi " + str(obwod_prostokat) + ", a pole " + str(pole_prostokat) + ".")
 
 #trapez
 
@@ -40,5 +40,16 @@ pi_zmienna = math.pi
 obwod_kolo = 2*pi_zmienna*r
 pole_kolo = pi_zmienna*(r**2)
 
-print("Obwód trapezu wynosi " + str(obwod_kolo) + ", a pole " + str(pole_kolo) + ".")
+print("Obwód koła wynosi " + str(obwod_kolo) + ", a pole " + str(pole_kolo) + ".")
 
+#trójkąt
+
+a = 8
+b = 17
+c = 15
+h = 8
+
+obwod_trojkat = a + b + c
+pole_trojkat = (c*h)/2
+
+print("Obwód trójkąta wynosi " + str(obwod_trojkat) + ", a pole " + str(pole_trojkat) + ".")
