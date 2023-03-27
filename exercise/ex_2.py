@@ -1,7 +1,7 @@
 #kwadrat
 
 from calendar import c
-
+import math
 
 a = 10
 
@@ -32,4 +32,13 @@ obwod_trapez = a + b + c + d
 pole_trapez = ((a+c)*h)/2
 
 print("Obwód trapezu wynosi " + str(obwod_trapez) + ", a pole " + str(pole_trapez) + ".")
+
+#koło
+
+r = 4
+pi_zmienna = math.pi
+obwod_kolo = 2*pi_zmienna*r
+pole_kolo = pi_zmienna*(r**2)
+
+print("Obwód trapezu wynosi " + str(obwod_kolo) + ", a pole " + str(pole_kolo) + ".")
 
