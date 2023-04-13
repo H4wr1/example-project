@@ -17,7 +17,7 @@ print("Hello {}".format(student))
 
 studenci = ["Ania", "Kuba", "Piotr", "Jan"]
 
-# policz liczbe studentow w tablicy studenci 
+# policz liczbe studentow w tablicy studenci
 # oczekiwany rezultat: Liczba studentow wynosi: 4
 liczba_studentow = len(studenci)
 print("Liczba studentow wynosi: {}".format(liczba_studentow))
@@ -33,8 +33,8 @@ studenci = ["Ania", "Kasia", "Piotr", "Tomek"]
 # Hello Kasia
 # Hello Piotr
 # Hello Tomek
-for x in studenci :
-    print("Hello {}".format([x]))
+for student in studenci :
+    print("Hello {}".format([student]))
 
 # zadanie 1.5
 
@@ -109,7 +109,7 @@ wykres_3 = [[2, 3], [4, 3], [5, 4]]
 # jesli sie nie da, to zwroc False
 # jesli sie da, zwroc True
 
-def czy_liniowa(punkty: list) :
+def czy_liniowa(punkty: list()) :
     return (punkty[0][1] - punkty[1][1]) * (punkty[0][0] - punkty[2][0]) == (punkty[0][1] - punkty[2][1]) * (punkty[0][0] - punkty[1][0])
 
 wykres_1_funkcja_liniowa = czy_liniowa(wykres_1)
