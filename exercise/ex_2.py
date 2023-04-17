@@ -1,55 +1,50 @@
-#kwadrat
-
-from calendar import c
+# Import math Library
 import math
 
-a = 10
+# Print the value of pi
+print (math.pi)
 
-obwod = a*4
-pole = a*a
+def trojkat(bok_a, bok_b, bok_c, wysokosc_a):
+    obwod = bok_a + bok_b + bok_c
+    pole = (bok_a * wysokosc_a) / 2
+    return obwod, pole
 
-print("Obwówd kwadratu wynosi " + str(obwod) + ", a pole " + str(pole) + ".")
 
-#prostokąt
+# kwadrat, prostokat dla studenta 1
+def kwadrat(bok):
+    # TODO
+    return 0, 0
 
-a = 10
-b = 5
 
-obwod_prostokat = (a*2)+(b*2)
-pole_prostokat = a*b
+def prostokat(bok_a, bok_b):
+    # TODO
+    return 0, 0
 
-print("Obwód prostokąta wynosi " + str(obwod_prostokat) + ", a pole " + str(pole_prostokat) + ".")
+# rownoleglobok i romb dla studenta 2
+def rownoleglobok(bok_a, bok_b, wysokosc_a):
+    # TODO
+    return 0, 0
 
-#trapez
+def romb(bok, wysokosc):
+    # TODO
+    return 0, 0
 
-a = 4
-b = 13
-c = 9
-d = 12
-h = 12
+# trapez i kolo dla studenta 3
+def trapez(bok_a, bok_b, bok_c, bok_d, wysokosc_a):
+    # TODO
+    return 0, 0
 
-obwod_trapez = a + b + c + d
-pole_trapez = ((a+c)*h)/2
 
-print("Obwód trapezu wynosi " + str(obwod_trapez) + ", a pole " + str(pole_trapez) + ".")
+def kolo(promien):
+    # TODO
+    return 0, 0
 
-#koło
 
-r = 4
-pi_zmienna = math.pi
-obwod_kolo = 2*pi_zmienna*r
-pole_kolo = pi_zmienna*(r**2)
-
-print("Obwód koła wynosi " + str(obwod_kolo) + ", a pole " + str(pole_kolo) + ".")
-
-#trójkąt
-
-a = 8
-b = 17
-c = 15
-h = 8
-
-obwod_trojkat = a + b + c
-pole_trojkat = (c*h)/2
-
-print("Obwód trójkąta wynosi " + str(obwod_trojkat) + ", a pole " + str(pole_trojkat) + ".")
+# assert trojkat(10, 15, 16, 8) == (41, 40)
+# assert kwadrat(20) == (80, 400)
+# assert prostokat(12, 10) == (44, 120)
+# assert rownoleglobok(6, 5, 2) == (22, 12)
+# assert romb(10, 5) == (40, 50)
+# assert trapez(10, 15, 7, 14, 2) == (45, 25)
+# TODO na koniec (na wyraźne polecenie prowadzącego)! 
+# Dla każdej figury powinny znajdować się dwa testy
