@@ -72,20 +72,22 @@ def solve_sudoku4x4(board):
     row, col = find_next_empty_cell(board)
     for num in range(1, 5):
         if is_valid(board, row, col, num):
-            board[row][col] = num
+            board[row][col] = num          
             if solve_sudoku4x4(board):
                 return True
             board[row][col] = 0
-
+    #jesli zadna liczba nie jest prawdilowa (w każdej kombinacji rekurencyjnej) to nie ma rozwiazania lamiglowki
     return False
 
 def is_complete(board):
+    #czy nie ma zera
     for row in board:
         if 0 in row:
             return False
     return True
 
 def find_next_empty_cell(board):
+    #znajdz nastepna komorke gdzie jest zero
     for row in range(4):
         for col in range(4):
             if board[row][col] == 0:
@@ -93,15 +95,15 @@ def find_next_empty_cell(board):
     return None, None
 
 def is_valid(board, row, col, num):
-    # wiersz
+    # sprawdz wiersz
     if num in board[row]:
         return False
 
-    # kolumna
+    # sprawdz kolumne
     if num in [board[i][col] for i in range(4)]:
         return False
 
-    # 2na2 siatka
+    # sprawdz siatke 2x2
     start_row = (row // 2) * 2
     start_col = (col // 2) * 2
     for i in range(start_row, start_row + 2):
