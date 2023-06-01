@@ -51,66 +51,76 @@ fibo1 = 8
 print("Ciąg fibonacciego, pierwsze {} liczb:".format(fibo1))
 for i in range(fibo1):
     print(fibonacci(i))
-# fun rozw_suodku4x4 board
-#   is solved?
-#       y->True
-#       n -> 
-def rozwiaz_sudoku4x4(plansza):
-    if czy_rozwiazane(plansza):
+
+# fun solve_sudoku4x4 board
+#   is completed?
+#       y -> True
+#       n -> row, column = row, column of the next empty cell
+#            for number = 1 to 4
+#                is number valid?
+#                   y -> board[row, column] = number
+#                        is solve_sudoku4x4(board) True?
+#                            y -> True
+#                        board[row, column] = 0
+#             endfor
+#             -> False
+#          
+def solve_sudoku4x4(board):
+    if is_complete(board):
         return True
 
-    wiersz, kolumna = nastepna_pusta_komorka(plansza)
-    for liczba in range(1, 5):
-        if czy_prawidlowa(plansza, wiersz, kolumna, liczba):
-            plansza[wiersz][kolumna] = liczba
-            if rozwiaz_sudoku4x4(plansza):
+    row, col = find_next_empty_cell(board)
+    for num in range(1, 5):
+        if is_valid(board, row, col, num):
+            board[row][col] = num
+            if solve_sudoku4x4(board):
                 return True
-            plansza[wiersz][kolumna] = 0
+            board[row][col] = 0
 
     return False
 
-def czy_rozwiazane(plansza):
-    for wiersz in plansza:
-        if 0 in wiersz:
+def is_complete(board):
+    for row in board:
+        if 0 in row:
             return False
     return True
 
-def nastepna_pusta_komorka(plansza):
-    for wiersz in range(4):
-        for kolumna in range(4):
-            if plansza[wiersz][kolumna] == 0:
-                return wiersz, kolumna
+def find_next_empty_cell(board):
+    for row in range(4):
+        for col in range(4):
+            if board[row][col] == 0:
+                return row, col
     return None, None
 
-def czy_prawidlowa(plansza, wiersz, kolumna, liczba):
-    # Check row
-    if liczba in plansza[wiersz]:
+def is_valid(board, row, col, num):
+    # wiersz
+    if num in board[row]:
         return False
 
-    # Check column
-    if liczba in [plansza[i][kolumna] for i in range(4)]:
+    # kolumna
+    if num in [board[i][col] for i in range(4)]:
         return False
 
-    # Check 2x2 grid
-    start_row = (wiersz // 2) * 2
-    start_col = (kolumna // 2) * 2
+    # 2na2 siatka
+    start_row = (row // 2) * 2
+    start_col = (col // 2) * 2
     for i in range(start_row, start_row + 2):
         for j in range(start_col, start_col + 2):
-            if plansza[i][j] == liczba:
+            if board[i][j] == num:
                 return False
 
     return True
 
-plansza = [
-    [0, 1, 0, 0],
-    [3, 0, 0, 1],
-    [4, 0, 0, 2],
-    [0, 0, 4, 0]
+puzzle_1 = [
+    [3, 0, 2, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 1, 0, 4]
 ]
 
-if rozwiaz_sudoku4x4(plansza):
+if solve_sudoku4x4(puzzle_1):
     print("Rozwiązanie:")
-    for wiersz in plansza:
-        print(wiersz)
+    for row in puzzle_1:
+        print(row)
 else:
     print("Nie ma rozwiązania")
