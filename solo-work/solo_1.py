@@ -41,7 +41,7 @@ for student in studenci :
 liczba = 3
 potega = 4
 
-wynik = 3**4
+wynik = liczba**potega
 
 # oczekiwany rezultat:
 # Wynik wynosi: 81
