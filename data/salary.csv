@@ -1,7 +1,7 @@
-imie,nazwisko,wynagrodzenie_brutto
-Marzena,Kowalczyk,4500
-Karol,Małolepszy,6000
-Jolanta,Nowak,7200
-Karolina,Adamczyk,3500
-Piotr,Pieniewski,4150
-Anna,Pawlak,3890
+imie,nazwisko,wynagrodzenie_brutto,wiek
+Marzena,Kowalczyk,4500,26
+Karol,Małolepszy,6000,27
+Jolanta,Nowak,7200,26
+Karolina,Adamczyk,3500,27
+Piotr,Pieniewski,4150,26
+Anna,Pawlak,3890,27
